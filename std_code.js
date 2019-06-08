@@ -43,6 +43,13 @@ function z_rotation(x, y, z, dir)
 	return {x:xout, y:yout, z:zout}
 }
 
+function sort_by_avg_depth(a,b)
+{
+	depth_a = (a.verts[0].z+a.verts[1].z+a.verts[2].z)/3
+	depth_b = (b.verts[0].z+b.verts[1].z+b.verts[2].z)/3
+
+	return depth_a-depth_b;
+}
 
 function draw_sprite_rotated(sprite,pos,angle,subimage,x_flip,y_flip){
 	subimage = Math.floor(Math.max(0,subimage))
