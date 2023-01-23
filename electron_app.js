@@ -6,7 +6,7 @@ var files = fs.readdirSync('/');
 require('electron-debug')();
 
 function createWindow(){
-	win = new BrowserWindow({width: 800, height: 600,webPreferences: {devTools: true}})
+	win = new BrowserWindow({width: 800, height: 600, webPreferences: {devTools: true, nodeIntegration: true, contextIsolation: false, enableRemoteModule: true,}})
 
 	win.setMenu(null)
 
